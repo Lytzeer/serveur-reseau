@@ -32,7 +32,7 @@ while True:
         # On affiche dans le terminal les données reçues du client
         print(f"Données reçues du client : {data}")
         if str(data).__contains__("meo"):
-            anwser=("Meo à toi confrère.")
+            anwser=("Meo a toi confrere.")
         elif str(data).__contains__("waf"):
             anwser=("ptdr t ki")
         elif not str(data).__contains__("waf") and not str(data).__contains__("meo"):
