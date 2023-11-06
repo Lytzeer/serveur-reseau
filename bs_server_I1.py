@@ -14,7 +14,7 @@ s.bind((host, port))
 s.listen(1)
 # On définit l'action à faire quand quelqu'un se connecte : on accepte
 conn, addr = s.accept()
-s.sendall(b"Hi mate !")
+s.sendall("Hi mate !")
 # Dès que quelqu'un se connecte, on affiche un message qui contient son adresse
 print('Connected by', addr)
 
