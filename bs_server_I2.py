@@ -16,7 +16,7 @@ s.listen(1)
 conn, addr = s.accept()
 conn.sendall(b"Hi mate !")
 # Dès que quelqu'un se connecte, on affiche un message qui contient son adresse
-print(f"Un client vient de se co et son IP c'est {addr}.")
+print(f"Un client vient de se co et son IP c'est {addr[0]}.")
 
 # Petite boucle infinie (bah oui c'est un serveur)
 # A chaque itération la boucle reçoit des données et les traite
@@ -32,13 +32,13 @@ while True:
         # On affiche dans le terminal les données reçues du client
         print(f"Données reçues du client : {data}")
         if str(data).__contains__("meo"):
-            anwser="Meo à toi confrère."
+            anwser=("Meo à toi confrère.")
         elif str(data).__contains__("waf"):
-            anwser="ptdr t ki"
+            anwser=("ptdr t ki")
         elif not str(data).__contains__("waf") and not str(data).__contains__("meo"):
-            anwser="Mes respects humble humain."
+            anwser=("Mes respects humble humain.")
         # On répond au client un truc
-        conn.sendall(bytes(anwser))
+        conn.sendall(anwser.encode())
 
     except socket.error:
         print ("Error Occured.")
