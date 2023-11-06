@@ -38,7 +38,7 @@ while True:
         elif not str(data).__contains__("waf") and not str(data).__contains__("meo"):
             anwser="Mes respects humble humain."
         # On répond au client un truc
-        conn.sendall(bytes(f"{anwser}"))
+        conn.sendall(bytes(anwser))
 
     except socket.error:
         print ("Error Occured.")
