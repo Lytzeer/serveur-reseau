@@ -54,7 +54,7 @@ conn, addr = s.accept()
 conn.sendall(b"Hi mate !")
 # Dès que quelqu'un se connecte, on affiche un message qui contient son adresse
 logging.info(f"Un client {addr[0]} s'est connecté.")
-print(f"\033[255mInfo\033[255m Un client {addr[0]} s'est connecté.")
+print("\033[255m"+"INFO"+"\033[0m","Un client {addr[0]} s'est connecté.")
 
 # Petite boucle infinie (bah oui c'est un serveur)
 # A chaque itération la boucle reçoit des données et les traite
@@ -78,7 +78,7 @@ while True:
         # On répond au client un truc
         conn.sendall(anwser.encode())
         logging.info(f"Réponse envoyée au client {addr} : {anwser}")
-        print(f"\033[255mInfo\033[255m Réponse envoyée au client {addr} : {anwser}.")
+        print("\033[255m"+"INFO"+"\033[0m","Réponse envoyée au client {addr} : {anwser}.")
 
     except socket.error:
         print ("Error Occured.")
