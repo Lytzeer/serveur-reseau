@@ -15,14 +15,14 @@ args = parser.parse_args()
 # On choisit une IP et un port où on va écouter
 host = '' # string vide signifie, dans ce conetxte, toutes les IPs de la machine
 
-if args.port<0 or args.port>65535:
+if args.port is None:
+    port = 13337 # port choisi arbitrairement
+elif args.port<0 or args.port>65535:
     print("ERROR Le port specifie n'est pas un port possible (de 0 à 65535.)")
     exit(1)
 elif args.port<1024:
     print("ERROR Le port spécifié est un port privilégié. Spécifiez un port au dessus de 1024.")
     exit(2)
-elif args.port is None:
-    port = 13337 # port choisi arbitrairement
 else:
     port = args.port
 
