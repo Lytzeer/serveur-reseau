@@ -15,7 +15,7 @@ args = parser.parse_args()
 # On choisit une IP et un port où on va écouter
 host = '' # string vide signifie, dans ce conetxte, toutes les IPs de la machine
 
-if type(args["port"]) is not int:
+if type(args["port"]) is not int and args["port"] is not None:
     raise TypeError("Le port specifie doit etre un entier (int)")
 if args["port"]<0 or args["port"]>65535:
     print("ERROR Le port specifie n'est pas un port possible (de 0 à 65535.)")
