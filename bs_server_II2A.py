@@ -32,7 +32,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # On demande à notre programme de se bind sur notre port
 s.bind((host, port)) 
 logging.info(f"Le serveur tourne sur {host}:{port}")
-print("\033[255m"+"INFO"+"\033[255m"+" Le serveur toure sur " +host+" : "+str(port))
+print("\033[255m"+"INFO"+"\033[255m"+" Le serveur toure sur " +host+":"+str(port))
 
 last_connection_time = time.time()
 
