@@ -13,7 +13,7 @@ parser.add_argument("-p", "--port", action="store", type=int)
 args = parser.parse_args()
 
 # On choisit une IP et un port où on va écouter
-host = '' # string vide signifie, dans ce conetxte, toutes les IPs de la machine
+host = '10.1.4.2' # string vide signifie, dans ce conetxte, toutes les IPs de la machine
 
 if args.port is None:
     port = 13337 # port choisi arbitrairement
@@ -32,7 +32,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # On demande à notre programme de se bind sur notre port
 s.bind((host, port)) 
 logging.info(f"Le serveur tourne sur {host}:{port}")
-print("\033[255m"+"INFO"+"\033[255m"+" Le serveur toure sur " +host+" : "+port)
+print("\033[255m"+"INFO"+"\033[255m"+" Le serveur toure sur " +host+" : "+str(port))
 
 last_connection_time = time.time()
 
